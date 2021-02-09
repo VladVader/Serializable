@@ -3,8 +3,12 @@ import java.io.*;
 public class Runner {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Person person1 = new Person("Jan", "Kowalski", 25);
+        Company company = new Company("Apple");
         Cat ban = new Cat("Tom", 5);
+
         person1.addCat(ban);
+        person1.setCompany(company);
+
         ObjectOutputStream dos = new ObjectOutputStream(new FileOutputStream("data.txt"));
         dos.writeObject(person1);
         dos.close();
@@ -13,5 +17,6 @@ public class Runner {
         Person person = (Person) input.readObject();
         input.close();
         System.out.println(person);
+
     }
 }

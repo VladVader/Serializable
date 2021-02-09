@@ -7,6 +7,18 @@ public class Person implements Serializable {
     String surname;
     int age;
     List<Cat> cats = new ArrayList<>();
+    transient Company company;
+
+    public Person() {
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public Person(String name, String surname, int age) {
         this.name = name;
